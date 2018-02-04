@@ -25,7 +25,7 @@ SECRET_KEY = 'rmp4pin==tre6l2@ni5nx15^@z84@&$1iz4yl=4fc9-lfn#-9#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['simplemooc-luiseufrasio.c9users.io',]
 
 
 # Application definition
