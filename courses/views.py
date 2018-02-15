@@ -10,3 +10,10 @@ def index(request):
     }
     
     return render(request, 'index.html', context)
+
+def details(request, pk):
+	course = Course.objects.get(pk=pk)
+
+	return render(request, 'details.html', {
+		'course': course
+	})
