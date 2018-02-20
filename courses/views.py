@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Course
+from .forms import ContactCourse
 
 # Create your views here.
 def index(request):
@@ -21,6 +22,12 @@ def index(request):
 def details(request, slug):
 	course = Course.objects.get(slug=slug)
 
+	if request.method == 'POST':
+		form = ContactCourse(request.POST)
+	else:
+		form = ContactCourse()
+
 	return render(request, 'details.html', {
-		'course': course
+		'course': course,
+		'form': form
 	})
