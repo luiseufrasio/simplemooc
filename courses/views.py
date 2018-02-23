@@ -21,13 +21,18 @@ def index(request):
 	
 def details(request, slug):
 	course = Course.objects.get(slug=slug)
-
+	context = {}
+	
 	if request.method == 'POST':
 		form = ContactCourse(request.POST)
+		if form.is_valid():
+			context['is_valid'] = True
+			print(form.cleaned_data)
+			form = ContactCourse()
 	else:
 		form = ContactCourse()
 
-	return render(request, 'details.html', {
-		'course': course,
-		'form': form
-	})
+	context['form'] = form
+	context['course'] = course
+	
+	return render(request, 'details.html', context)
