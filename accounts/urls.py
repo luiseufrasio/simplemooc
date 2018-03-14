@@ -9,5 +9,6 @@ urlpatterns = [
 	path('entrar/', login, {'template_name': 'login.html'}, name='login'),
 	path('sair/', logout, {'next_page': 'core:home'}, name='logout'),
 	path('cadastre-se/', views.register, name='register'),
-	path('editar/', views.edit, name='edit')
+	path('editar/', views.edit, name='edit'),
+	path('editar-senha/', views.edit_password, name='edit_password')
 ]
