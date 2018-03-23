@@ -132,7 +132,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'Claris <ana.claris@gmail.com>'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'ana.claris@gmail.com' 
+EMAIL_HOST_USER = 'ana.claris@gmail.com'
 EMAIL_HOST_PASSWORD = 'senha'
 EMAIL_PORT = 587
 
@@ -143,3 +143,5 @@ LOGIN_URL='accounts:login'
 LOGIN_REDIRECT_URL='core:home'
 LOGOUT_URL='accounts:logout'
 AUTH_USER_MODEL = 'accounts.User'
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

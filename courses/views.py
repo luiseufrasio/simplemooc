@@ -3,6 +3,9 @@ from django.contrib.auth.decorators import login_required
 from .models import Course, Enrollment
 from .forms import ContactCourse
 
+from django.contrib import messages
+from django.contrib.messages import get_messages
+
 # Create your views here.
 def index(request):
     courses = Course.objects.all()
@@ -45,6 +48,9 @@ def enrollment(request, slug):
 	enrollment, created = Enrollment.objects.get_or_create(
 		user = request.user, course=course
 	)
-	# if created:
-	# 	enrollment.active()
+	if created:
+		messages.success(request, 'Você foi inscrito no curso com sucesso')
+	else:
+		messages.info(request, 'Você já está inscrito neste curso')
+
 	return redirect('accounts:dashboard')
