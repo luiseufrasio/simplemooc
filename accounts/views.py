@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.conf import settings
 
+from courses.models import Enrollment
+
 from .forms import (RegisterForm, EditAccountForm, PasswordResetForm)
 from .models import PasswordReset
 
@@ -14,7 +16,8 @@ User = get_user_model()
 @login_required
 def dashboard(request):
     template_name = 'dashboard.html'
-    return render(request, template_name)
+    context = {}
+    return render(request, template_name, context)
 
 def register(request):
     template_name = 'register.html'
