@@ -82,6 +82,7 @@ class Announcement(models.Model):
 
     course = models.ForeignKey(
         Course, verbose_name='Curso',
+        related_name='announcements',
         on_delete = models.PROTECT
     )
     title = models.CharField('Título', max_length=100)
