@@ -4,7 +4,7 @@ from django.test.client import Client
 from django.urls import reverse
 from django.conf import settings
 
-from .models import Course
+from courses.models import Course
 
 # Create your tests here.
 class ContactCourseTest(TestCase):
