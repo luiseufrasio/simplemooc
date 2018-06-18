@@ -134,7 +134,7 @@ DEFAULT_FROM_EMAIL = 'Claris <ana.claris@gmail.com>'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'ana.claris@gmail.com'
-EMAIL_HOST_PASSWORD = 'senha'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 
 CONTACT_EMAIL='luiseufrasio@gmail.com'
