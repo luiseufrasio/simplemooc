@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Thread
 
 class ForumView(ListView):
     
-    paginate_by = 1
+    paginate_by = 2
     template_name = 'index_forum.html'
 
     def get_queryset(self):
@@ -24,4 +24,14 @@ class ForumView(ListView):
         context['tags'] = Thread.tags.all()
         return context
 
+class ThreadView(DetailView):
+    model = Thread
+    template_name = 'thread.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ThreadView, self).get_context_data(**kwargs)
+        context['tags'] = Thread.tags.all()
+        return context
+
 index = ForumView.as_view()
+thread = ThreadView.as_view()
