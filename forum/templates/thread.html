@@ -73,17 +73,7 @@
                     <br />
                     {{ reply.reply|linebreaksbr }}
                     <br />
-                    {% if object.author == user %}
-                    <a href="{% url 'forum:reply_incorrect' reply.pk %}" title="" class="pure-button button-error reply-cancel-correct-lnk{% if not reply.correct %} hidden{% endif %}">Cancelar Resposta Correta</a>
-
-                    <a href="{% url 'forum:reply_correct' reply.pk %}" title="" class="pure-button button-success reply-correct-lnk{% if reply.correct %} hidden{% endif %}">Resposta Correta</a>
-
-                    <span class="fright label-success reply-correct-msg{% if not reply.correct %} hidden{% endif %}">resposta indicada pelo autor</span>
-                    <br class="reply-correct-msg{% if not reply.correct %} hidden{% endif %}" />
-                    {% elif reply.correct %}
-                    <span class="fright label-success">resposta indicada pelo autor</span>
-                    <br />
-                    {% endif %}
+                    
                 </p>
                 {% endfor %}
                 <hr />
